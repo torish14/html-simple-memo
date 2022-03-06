@@ -28,6 +28,11 @@
 			alert('メモがありません')
 		}
 
+		// textarea に入力されたテキストがあれば、それを表示する
+		if(localStorage.getItem('memo') != '') {
+			document.getElementById('memo').value = localStorage.getItem('memo')
+		}
+
 		// save ボタンをクリックしたら textarea に入力されたテキストを保存する
 		document.getElementById('save').addEventListener('click', function() {
 			localStorage.setItem('memo', document.getElementById('memo').value)
