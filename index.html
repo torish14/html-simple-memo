@@ -33,11 +33,14 @@
 			document.getElementById('memo').value = localStorage.getItem('memo')
 		}
 
-		// save ボタンをクリックしたら textarea に入力されたテキストを保存する
-		document.getElementById('save').addEventListener('click', function() {
+		// textarea に入力されたテキストを自動で保存する
+		// 即時関数（関数を定義すると同時に実行する）
+		// 参考: https://qiita.com/katsukii/items/cfe9fd968ba0db603b1e
+		(function autoSave(params) {
 			localStorage.setItem('memo', document.getElementById('memo').value)
-			console.log(localStorage.getItem('memo'))
-		})
+			setTimeout(autoSave, 1000)
+		}())
+
 		// save ボタンをクリックしたら textarea に入力されたテキストを保存する
 		// document.getElementById('save').addEventListener('click', function() {
 		// 	localStorage.setItem('memo', document.getElementById('memo').value)
