@@ -23,6 +23,11 @@
 		// データの全削除
 		// localStorage.clear()
 
+		// textarea に入力されたテキストが空の場合は警告する
+		if(localStorage.getItem('memo') == '') {
+			alert('メモがありません')
+		}
+
 		// save ボタンをクリックしたら textarea に入力されたテキストを保存する
 		document.getElementById('save').addEventListener('click', function() {
 			localStorage.setItem('memo', document.getElementById('memo').value)
