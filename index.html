@@ -22,6 +22,12 @@
 		// localStorage.removeItem('memo')
 		// データの全削除
 		// localStorage.clear()
+
+		// save ボタンをクリックしたら textarea に入力されたテキストを保存する
+		document.getElementById('save').addEventListener('click', function() {
+			localStorage.setItem('memo', document.getElementById('memo').value)
+			console.log(localStorage.getItem('memo'))
+		})
 	</script>
 </body>
 </html>
