@@ -10,7 +10,7 @@
 	<h1>メモ帳</h1>
 	<textarea name="40" id="memo" cols="40" rows="10"></textarea>
 	<p>
-		<input type="button" id="save" value="Save">
+		<!-- <input type="button" id="save" value="Save"> -->
 		<input type="button" id="clear" value="Clear">
 	</p>
 	<script>
@@ -38,6 +38,11 @@
 			localStorage.setItem('memo', document.getElementById('memo').value)
 			console.log(localStorage.getItem('memo'))
 		})
+		// save ボタンをクリックしたら textarea に入力されたテキストを保存する
+		// document.getElementById('save').addEventListener('click', function() {
+		// 	localStorage.setItem('memo', document.getElementById('memo').value)
+		// 	console.log(localStorage.getItem('memo'))
+		// })
 
 		// clear ボタンをクリックしたら textarea に入力されたテキストを削除する
 		document.getElementById('clear').addEventListener('click', function() {
