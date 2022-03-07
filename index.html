@@ -9,6 +9,7 @@
 <body>
 	<h1>メモ帳</h1>
 	<textarea name="40" id="memo" cols="40" rows="10"></textarea>
+	<p id="message" style="display: none;">Saving...</p>
 	<p>
 		<!-- <input type="button" id="save" value="Save"> -->
 		<input type="button" id="clear" value="Clear">
@@ -38,6 +39,12 @@
 		// 参考: https://qiita.com/katsukii/items/cfe9fd968ba0db603b1e
 		(function autoSave(params) {
 			localStorage.setItem('memo', document.getElementById('memo').value)
+			// Saving... を表示する
+			document.getElementById('message').style.display = 'block'
+			// 1秒後に Saving... を非表示にする
+			setTimeout(function() {
+				document.getElementById('message').style.display = 'none'
+			}, 1000)
 			setTimeout(autoSave, 1000)
 		}())
 
